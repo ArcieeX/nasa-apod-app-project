@@ -13,7 +13,8 @@ function App() {
 
   useEffect(() => {
     async function fetchAPIData() {
-      const NASA_KEY = "[YOUR KEY HERE]"
+      
+      const NASA_KEY = import.meta.env.VITE_API_KEY ;
       const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_KEY}`
       try {
         const res = await fetch(url)
@@ -45,4 +46,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
